@@ -1,0 +1,164 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Doctor_appoinment.Master.cs" Inherits="Online_Doctor_Appoinment_System.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Visit Dr.</title>
+    <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.cs" />
+    <link href="content/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="content/css/bootstrap-theme.min.css" rel="stylesheet" />
+
+    <link href="content/css/bootstrap.css" rel="stylesheet" />
+    <link href="content/css/jquery-te-1.4.0.css" rel="stylesheet" />
+    <link href="content/css/responsive.css" rel="stylesheet" />
+    <link href="content/css/jquery-ui.css" rel="stylesheet" />
+    <link href="content/css/style.css" rel="stylesheet" />
+    <script src="content/jquery/Main.js"></script>
+    <script src="content/jquery/jquery-te-1.4.0.min.js"></script>
+    <script src="content/jquery/jquery.min.js"></script>
+    <script src="content/jquery/jquery-ui.js"></script>
+    <script src="content/jquery/jquery-ui-timepicker-addon.js"></script>
+
+     <script src="content/jquery/bootstrap.js"></script>
+    <script src="content/jquery/typeahead.bundle.js"></script>
+
+    <link rel="shortcut icon" href="content/img/indiaopdfavicon.ico" type="image/x-icon" />
+   
+
+
+
+    <asp:ContentPlaceHolder ID="headPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="mainPopupDialog">
+
+    	 <!--  Head Line -->
+
+	<div class="container-fluid header-block">
+	
+	    <div class="container ">
+			
+            <div class="row header no-gutter-topBottom">
+			
+                <div class="col-md-5 col-sm-4 site-logo">
+                        <a href="#" style="cursor: pointer;">
+                        <img src="/content/img/logo.png" class="img-responsive" alt="Find Best Doctors & Book Appointment Online"/></a>
+                </div>
+					
+
+                <div class="col-md-7 col-sm-8">                        
+                        
+					<div class="col-md-12" style="padding-left: 0px; margin-top: 5px;">    
+                        <div style="font-size: 14px" class="top_callnumbersbox text-bold"><span>Phone:  </span>+880 1711 224488 </br> Email: support@vigitdr.com  </div>                            
+                            <div class="NavigationHead">
+                                <div class="topNav">
+                                        
+                                    <div class="">
+                                        <div class="navbar-collapse collapse" id="navbar" style="padding: 0px;">
+                                            <ul class="nav navbar-nav navbar-right">
+ 
+                                                <li class="test"><a  class="aLoadActionLink" href="/Doctors_veiw.aspx" title="New Appoinment">Appointments</li>
+                                                <li class="test"><a  class="aLoadActionLink" href="/Manage_Appointment.aspx" title="Manage Appoinments">Manage Booking</li>
+												
+
+												
+												<% if(Session["activeUser"] == null) { %>
+            
+                                                <li class="test"><a  class="aLoadActionLink"  href="/Log_In.aspx" title="Login">Login</a></li>
+                                               <% }else{ %>
+												
+                                                <li class="test"><a  class="aLoadActionLink"  href="/Log_In.aspx" title="Login">Logout</a></li>
+
+                                                <% } %>
+                                                    
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                        <div class="clear">
+										</div>
+                                </div>
+                            </div> 
+
+                    </div>
+                            
+                </div>
+	
+            </div>
+        </div>
+    </div>
+
+	<!--  End Head Line -->
+
+
+
+
+
+
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="bodyPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="bodyPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+
+    
+	
+		<!--  Footer -->
+	<div class="footer">
+                
+        <div class=" col-md-12 col-sm-12 col-xs-12">
+			<div class="col-md-4"><span class="copyright"> <a href="#" > Copiright © S. Hossain ICT (G#2, B#27, PGDICT) 2017. </a> </span>
+			</div>                                           
+            <div class="col-md-8 no-gutter">
+                
+			</div>
+            <div class="DownloadLnk col-xs-12 no-gutter">
+			<div class="col-md-12" style="padding-top:0px;font-size:12px;">
+                Visit Dr. : Agargouwn<br>
+                ICT Tower, BCC Babon T/A <br>
+                Agargouwn, Dhaka-1238<br>
+                Email:support@visitdr.com<br>
+                Phone:+880-1755-354164
+          
+                </div>
+                              
+            </div>
+            <div class="DownloadLnk col-xs-12 no-gutter">
+			<div class="col-md-12" style="padding-top:0px;font-size:12px;">
+                Visit Dr. : Mohakhali<br>
+                Bay Tower,Mohakhali C/A <br>            
+                Gulshan, Dhaka-1212<br>
+                Email:support@visitdr.com<br>
+                Phone:+880-1740-916171
+          
+                </div>
+                              
+            </div>
+            <div class="FooterSocialLink col-xs-12 no-gutter">
+                <ul>
+                    <li><a href="#" target="" title="facebook"><img src="/content/img/facebook-icon.png" /></a></li>
+                    <li><a href="#" target="" title="linkdin"><img src="/content/img/linkdin-icon.png" /></a></li>
+                    <li><a href="#" target="" title="twitter"><img src="/content/img/twitter-icon.png" /></a></li>
+                    <li><a href="#" target="" title="googlePlus"><img src="/content/img/google-plus-icon.png" /></a></li>
+                </ul>
+            </div>
+        </div>                                           
+    </div>
+                           
+     <!-- End Footer --> 
+
+
+
+</body>
+</html>
